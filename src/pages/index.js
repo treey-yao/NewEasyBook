@@ -8,13 +8,12 @@
  * @param component 模板文件路径
 */
 
-// import prd from './prd'
+import admin from './admin'
 export default [
-    // ...prd,
+    ...admin,
     /**
      * 公共
      * */
-
     {
         path: "/debug",
         name: "调试",

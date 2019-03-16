@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import config from './config/index'
 import pages from './pages/index'
+import home from '@/components/app-view'
 
 Vue.use(Router)
 
@@ -9,10 +10,13 @@ var route = new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      redirect: "/admin/index"
-    },
-    ...pages,
+      name: 'Home',
+      component: home,
+      children: [
+        ...pages
+      ]
+    }
+    // ...pages,
   ]
 })
 
@@ -29,4 +33,4 @@ var route = new Router({
 //   }
 // });
 
-export default router;
+export default route;
